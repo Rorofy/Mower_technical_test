@@ -2,6 +2,12 @@ import * as fs from 'fs';
 
 const getData = (): { topRightCorner: string[], basePositions: string[][], instructions: string[] } => {
     const fileName: string = process.argv.slice(2)[0];
+
+    if (!fileName) {
+        console.error('No filename provided, usage: npm start <filename>');
+        return (process.exit(1));
+    }
+
     const fileContent: string = fs.readFileSync(fileName, 'utf8').replace(/\r/g, '');
     const topRightCorner: string[] = fileContent.split('\n')[0].split(' ');
     let basePositions: string[][] = [];

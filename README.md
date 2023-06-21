@@ -4,4 +4,4 @@ A technical test for the company Sensome.
 
 **How to use**
 
-npm start {test_file}
+npm start <filename>
